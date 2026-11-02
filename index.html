@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Dr. Sharaara Rahman, DPM — concierge foot and ankle surgeon in New York. Private membership care by referral or inquiry.">
+<link rel="icon" href="img/signature-navy.png">
+<title>Dr. Shar’s Foot &amp; Ankle — Concierge Foot and Ankle Surgeon, New York</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* ============================================================
+   Dr. Shar’s Foot & Ankle — v15 stylesheet
+   Written once, in order: tokens → type → layout → sections → phone.
+   Spacing scale: 8 16 24 40 64 96. Type scale: display, h, sub, body, small.
+   ============================================================ */
+
+/* 1. Tokens */
+:root{
+  color-scheme:light;
+  --linen:#F7F3EE; --paper:#FBF9F5; --sand:#ECE3D4; --navy:#12223F; --navy-2:#1C2E52;
+  --gold:#B8935A; --gold-deep:#84622E; --gold-light:#C9A46B; --slate:#5E6270; --ink-soft:#3A4560;
+  --line:#E2D8C6; --on-navy:#D6D3DA; --on-navy-dim:#AEB3C2;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:Jost,"Helvetica Neue",Arial,sans-serif;
+  --caps:Cinzel,"Times New Roman",serif;
+  --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px; --s6:96px;
+  --r:16px; --gutter:max(24px,env(safe-area-inset-left,0px));
+  --bar-h:76px;
+}
+
+/* 2. Base and type scale */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--linen);color:var(--navy);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
+p,li{text-wrap:pretty}
+h1,h2,h3{text-wrap:balance;margin:0}
+.t-display{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5vw,72px);line-height:1.02;letter-spacing:-.015em}
+.t-h{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.4vw,48px);line-height:1.08;letter-spacing:-.01em}
+.t-sub{font-family:var(--serif);font-weight:500;font-size:24px;line-height:1.25}
+.lede{margin:0;font-size:17px;line-height:1.6;color:var(--ink-soft);max-width:34em}
+.small{font-size:14px;line-height:1.5}
+.muted{color:var(--slate)}
+.label{display:flex;align-items:center;gap:14px;margin:0;font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep)}
+.label::before{content:"";width:32px;height:1px;background:currentColor;opacity:.7;flex:none}
+.caps{font-family:var(--caps);font-size:13px;letter-spacing:.26em;color:var(--gold-deep)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* 3. Layout primitives */
+.wrap{max-width:1200px;margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter)}
+.band{padding-block:var(--s6)}
+.on-sand{background:var(--sand)}
+.on-paper{background:var(--paper)}
+.on-navy{background:var(--navy);color:var(--linen)}
+.on-navy .label{color:var(--gold-light)}
+.on-navy .lede{color:var(--on-navy)}
+.sh{display:flex;flex-direction:column;gap:var(--s2);max-width:640px;margin-bottom:var(--s4)}
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:600px}
+.split.rev .photo{order:2}
+.photo{position:relative;margin:0;overflow:hidden;background:var(--sand)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.panel{display:flex;flex-direction:column;justify-content:center;padding:var(--s5) max(48px,6vw)}
+.inner{max-width:560px;display:flex;flex-direction:column;gap:var(--s2)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r)}
+.chip{position:absolute;left:var(--s2);bottom:var(--s2);background:rgba(18,34,63,.72);color:var(--linen);font-size:13px;padding:7px 14px;border-radius:999px;backdrop-filter:blur(6px)}
+
+/* buttons and links */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 var(--s3);border-radius:999px;font:500 15px var(--sans);text-decoration:none;border:1px solid transparent;white-space:nowrap;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.btn svg{width:16px;height:16px;transition:transform .2s}
+.btn:hover svg{transform:translateX(3px)}
+.btn-dark{background:var(--navy);color:var(--linen)}.btn-dark:hover{background:var(--navy-2)}
+.btn-line{border-color:rgba(18,34,63,.25);color:var(--navy)}.btn-line:hover{border-color:var(--navy);background:var(--paper)}
+.link{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:500;font-size:15px;text-decoration:none;border-bottom:1px solid currentColor;line-height:1.2;align-self:flex-start}
+.link svg{width:16px;height:16px;transition:transform .2s}.link:hover svg{transform:translateX(3px)}
+.icon-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:999px;border:1px solid rgba(18,34,63,.2);background:none;color:var(--navy);cursor:pointer}
+
+/* reveal (reduced-motion safe) */
+@media (prefers-reduced-motion:no-preference){
+  .rv{opacity:0;transform:translateY(12px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+}
+
+/* 4. Header and menu */
+.hdr{position:sticky;top:0;z-index:20;background:rgba(247,243,238,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);height:76px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;min-height:44px}
+.brand img{width:100px;height:auto}
+.brand span{font-family:var(--caps);font-size:13px;letter-spacing:.26em;border-left:1px solid var(--gold);padding-left:14px;white-space:nowrap}
+.nav{display:flex;gap:28px;font-size:15px}
+.nav a{text-decoration:none;color:var(--ink-soft);display:flex;align-items:center;min-height:44px}.nav a:hover{color:var(--navy)}
+.nav a.tel{color:var(--navy);font-weight:500}
+.menu{position:fixed;inset:0;z-index:40;background:var(--linen);padding:calc(var(--s2) + env(safe-area-inset-top,0px)) var(--gutter) var(--s4);display:flex;flex-direction:column;overflow:auto}
+.menu[hidden]{display:none}
+.menu .icon-btn{display:inline-flex;align-self:flex-end;margin-bottom:var(--s2)}
+.menu nav{display:flex;flex-direction:column}
+.menu nav a{font-family:var(--serif);font-size:34px;text-decoration:none;line-height:1.4;min-height:48px}
+.menu .btn{margin-top:var(--s3);align-self:flex-start}
+.menu-contact{display:flex;flex-direction:column;margin-top:var(--s4);padding-top:var(--s3);border-top:1px solid var(--line)}
+.menu-contact a{font-size:17px;min-height:44px;display:flex;align-items:center;text-decoration:none}
+.menu-contact span{font-size:14px;color:var(--slate);margin-top:var(--s1)}
+
+/* 5. Hero */
+.hero .panel{padding-block:var(--s5)}
+.claim{margin:0;font-family:var(--serif);font-style:italic;font-size:24px;line-height:1.3;color:var(--ink-soft)}
+.act{display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap;margin-top:var(--s1)}
+.act .note{font-size:14px;color:var(--slate)}
+.stats{list-style:none;margin:var(--s2) 0 0;padding:var(--s3) 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s2)}
+.stats b{display:block;font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.05}
+.stats span{font-size:14px;color:var(--slate);line-height:1.4}
+.photo-hero img{object-position:22% 30%}
+
+/* 6. Credentials */
+.creds{border-bottom:1px solid var(--line)}
+.creds .wrap{padding-block:var(--s4)}
+.creds-h{justify-content:center;margin-bottom:var(--s3)}
+.creds-h::before{display:none}
+.plaques{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--s3)}
+.plaques li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
+.plaques .logo{height:44px;display:flex;align-items:center;justify-content:center}
+.plaques .logo img{width:auto;height:auto;max-width:170px;opacity:.9}
+.plaques .logo .lg-ms{max-height:44px}.plaques .logo .lg-lh{max-height:30px}.plaques .logo .lg-ny{max-height:30px}.plaques .logo .lg-ya{max-height:28px}.plaques .logo .lg-ab{max-height:36px}
+.plaques p{margin:0;font-size:14px;line-height:1.4;color:var(--ink-soft);max-width:200px}
+
+/* 7. Why it's different */
+.photo-why img{object-position:62% 45%}
+.pairs{list-style:none;margin:var(--s1) 0 0;padding:0}
+.pairs li{display:flex;flex-direction:column;gap:4px;padding:var(--s2) 0;border-top:1px solid var(--line)}
+.pairs li:last-child{border-bottom:1px solid var(--line)}
+.pairs small{font-size:13px;letter-spacing:.02em;color:var(--slate)}
+.pairs span{font-family:var(--serif);font-size:26px;line-height:1.2;font-weight:500}
+
+/* 8. Membership */
+.tier-switch{display:none}
+.tiers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3)}
+.tier{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:var(--s4);display:flex;flex-direction:column;gap:var(--s2)}
+.tier-top{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s2);flex-wrap:wrap}
+.tier-name{font-family:var(--caps);font-size:16px;letter-spacing:.22em}
+.price{font-family:var(--serif);font-size:32px;font-weight:500;line-height:1;white-space:nowrap}
+.price small{font-family:var(--sans);font-size:14px;color:var(--slate);font-weight:400}
+.tier .sub{margin:0;color:var(--slate)}
+.tier ul,.both{list-style:none;margin:0;padding:0}
+.tier li,.both li{display:flex;gap:12px;padding:11px 0;border-top:1px solid var(--line);font-size:15.5px;line-height:1.45}
+.tier li svg,.both li svg{flex:none;width:18px;height:18px;margin-top:2px;color:var(--gold)}
+.tier.black{background:var(--navy);color:var(--linen);border-color:var(--navy)}
+.tier.black .tier-name{color:var(--gold-light)}
+.tier.black .price small,.tier.black .sub{color:var(--on-navy-dim)}
+.tier.black li{border-color:rgba(255,255,255,.12);color:var(--on-navy)}
+.both{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 var(--s3);margin-top:var(--s3)}
+.both li{border-top:1px solid rgba(18,34,63,.14)}
+.fine{font-size:14px;color:var(--slate);margin:var(--s3) 0 0}
+
+/* 9. Conditions */
+.photo-cond img{object-position:40% 35%}
+.condlist{list-style:none;margin:var(--s1) 0 0;padding:0}
+.condlist li{border-top:1px solid var(--line)}
+.condlist li:last-child{border-bottom:1px solid var(--line)}
+.condlist a{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:52px;padding:6px 0;text-decoration:none;font-family:var(--serif);font-size:23px;font-weight:500;line-height:1.2}
+.condlist svg{flex:none;width:16px;height:16px;color:var(--gold-deep);transition:transform .2s}
+.condlist a:hover svg{transform:translate(2px,-2px)}
+
+/* 10. About, How to join */
+.photo-about img{object-position:58% 30%}
+.photo-how img{object-position:55% 35%}
+.steps{list-style:none;margin:var(--s1) 0 0;padding:0}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:18px 0;border-top:1px solid rgba(255,255,255,.14)}
+.steps li:last-child{border-bottom:1px solid rgba(255,255,255,.14)}
+.steps .n{font-family:var(--serif);font-size:22px;color:var(--gold-light)}
+.steps b{font-weight:500;font-size:17px}
+.steps p{margin:2px 0 0;color:var(--on-navy-dim);font-size:15.5px}
+.on-navy .link{color:var(--linen)}
+
+/* 11. FAQ */
+.faq{display:grid;grid-template-columns:5fr 7fr;gap:var(--s5);align-items:start}
+.faq .sh{position:sticky;top:120px;margin:0}
+.qa details{border-top:1px solid var(--line)}
+.qa details:last-child{border-bottom:1px solid var(--line)}
+.qa summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:var(--s2);padding:20px 0;font-family:var(--serif);font-size:23px;font-weight:500;line-height:1.25}
+.qa summary::-webkit-details-marker{display:none}
+.qa .pm{flex:none;width:36px;height:36px;border-radius:999px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:transform .25s}
+.qa details[open] .pm{transform:rotate(45deg)}
+.qa details p{margin:0 0 20px;color:var(--ink-soft);max-width:38em}
+
+/* 12. Contact */
+.contact{display:grid;grid-template-columns:7fr 5fr;gap:var(--s3);align-items:stretch}
+.form{padding:var(--s4);display:flex;flex-direction:column;gap:var(--s2)}
+.form label{min-width:0;display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;color:var(--ink-soft)}
+.form input,.form textarea,.form select{min-width:0;font:400 16px var(--sans);color:var(--navy);background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-height:48px;width:100%}
+.form textarea{resize:vertical}
+.form input:focus,.form textarea:focus,.form select:focus{outline:2px solid var(--gold-deep);outline-offset:1px;border-color:var(--gold)}
+.form .bad{border-color:#B0453A}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2)}
+.f-act{display:flex;align-items:center;gap:var(--s2);flex-wrap:wrap;margin-top:var(--s1)}
+.f-act a{text-decoration:none;font-weight:500;color:var(--navy);display:inline-flex;align-items:center;min-height:44px}
+.f-done{margin:0}
+.details{padding:var(--s1) var(--s4);display:flex;flex-direction:column;justify-content:space-around}
+.vcard{display:flex;flex-direction:column;gap:2px;padding:var(--s3) 0}
+.vcard + .vcard{border-top:1px solid var(--line)}
+.vcard .label{margin-bottom:6px}.vcard .label::before{display:none}
+.vcard p,.vcard a{margin:0;font-size:17px;text-decoration:none}
+.vcard a{display:inline-flex;align-items:center;min-height:44px}
+.vcard .small{font-size:14px}
+
+/* 13. Footer */
+footer{background:var(--linen);padding-block:var(--s5) var(--s4)}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:var(--s4)}
+.brandcol{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.brandcol img{width:140px}
+.sig-l{display:none}
+.foot h4{margin:0 0 var(--s1)}.foot h4::before{display:none}
+.foot a{display:flex;align-items:center;min-height:44px;text-decoration:none;color:var(--ink-soft);font-size:16px}
+.foot a:hover{color:var(--navy)}
+.legal{margin-top:var(--s4);padding-top:var(--s3);border-top:1px solid var(--line);font-size:14px;color:var(--slate);display:flex;flex-direction:column;gap:6px}
+.legal p{margin:0}
+.mbar{display:none}
+
+/* ============================================================
+   14. Tablet (≤1024px)
+   ============================================================ */
+@media (max-width:1024px){
+  .nav,.hdr-cta{display:none}.icon-btn{display:inline-flex}
+  .split{min-height:540px}
+  .panel{padding:var(--s4)}
+  .plaques{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3) var(--s2)}
+  .plaques li:nth-child(4){grid-column:1/span 1}
+  .stats b{font-size:22px;white-space:nowrap}.stats{gap:12px}
+  .hero .label{white-space:nowrap}
+  .faq{grid-template-columns:1fr;gap:var(--s3)}.faq .sh{position:static}
+  .contact{grid-template-columns:minmax(0,1fr)}
+  .details{flex-direction:row;padding:0 var(--s3)}
+  .vcard{flex:1;padding:var(--s3) var(--s2)}
+  .vcard + .vcard{border-top:0;border-left:1px solid var(--line)}
+  .foot{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ============================================================
+   15. Phone (≤700px) — the only phone block
+   ============================================================ */
+@media (max-width:700px){
+  body{font-size:16px}
+  .band{padding-block:var(--s4)}
+  .sh{gap:12px;margin-bottom:var(--s3)}
+  .lede{font-size:16px}
+  .t-sub{font-size:20px}
+  .label{font-size:13px}
+
+  /* header */
+  .hdr .wrap{height:64px}
+  .brand img{width:86px}.brand{gap:10px}.brand span{font-size:13px;letter-spacing:.2em;padding-left:10px}
+
+  /* split: photo on top, text below; photos only where decided */
+  .split{display:flex;flex-direction:column;min-height:0}
+  .split .photo{order:-1}
+  .photo{aspect-ratio:4/3}
+  .photo img{position:absolute}
+  .panel{padding:var(--s3) var(--gutter) var(--s4)}
+  .inner{gap:12px}
+  .photo-cond,.photo-how{display:none}
+  .photo-hero{aspect-ratio:4/3}.photo-hero img{object-position:20% 28%}
+  .photo-why{aspect-ratio:16/10}.photo-why img{object-position:62% 40%}
+  .photo-about{aspect-ratio:5/4}.photo-about img{object-position:58% 30%}
+  #conditions .panel,#how .panel{padding-top:var(--s4)}
+
+  /* hero */
+  .hero .panel{padding-top:var(--s3)}
+  .claim{font-size:20px}
+  .act{flex-direction:column;align-items:flex-start;gap:var(--s1)}
+  .act .btn{display:none}
+  .stats{padding-top:var(--s2);gap:12px}.stats b{font-size:22px}.stats span{font-size:13px}
+
+  /* credentials: five rows */
+  .creds .wrap{padding-block:var(--s3)}
+  .creds-h{justify-content:flex-start;margin-bottom:var(--s1)}
+  .plaques{display:block}
+  .plaques li{display:grid;grid-template-columns:110px 1fr;gap:var(--s2);align-items:center;text-align:left;padding:12px 0;border-top:1px solid var(--line)}
+  .plaques li:nth-child(4){grid-column:auto}
+  .plaques li:last-child{border-bottom:1px solid var(--line)}
+  .plaques .logo{height:36px;justify-content:flex-start}
+  .plaques .logo img{max-width:110px}
+  .plaques .logo .lg-ms{max-height:36px}.plaques .logo .lg-lh{max-height:24px}.plaques .logo .lg-ny{max-height:24px}.plaques .logo .lg-ya{max-height:24px}.plaques .logo .lg-ab{max-height:30px}
+  .plaques p{font-size:14px;max-width:none}
+
+  /* why */
+  .pairs span{font-size:22px}
+
+  /* membership */
+  .tier-switch{display:inline-flex;padding:4px;border-radius:999px;background:rgba(18,34,63,.08);margin-bottom:var(--s2)}
+  .tier-switch button{min-height:44px;min-width:112px;padding:0 18px;border:0;border-radius:999px;background:none;font:500 15px var(--sans);color:var(--ink-soft);cursor:pointer}
+  .tier-switch button[aria-selected="true"]{background:var(--navy);color:var(--linen)}
+  .tiers{grid-template-columns:1fr}
+  .tiers[data-show="private"] .tier.black,.tiers[data-show="black"] .tier:not(.black){display:none}
+  .tier{padding:var(--s3)}
+  .both{grid-template-columns:1fr;margin-top:var(--s2)}
+  .both li{padding:8px 0;font-size:15px}
+  .fine{margin-top:var(--s2)}
+
+  /* conditions, faq, contact */
+  .condlist a{font-size:21px;min-height:50px}
+  .qa summary{font-size:20px;padding:14px 0}
+  .form{padding:var(--s3)}.f2{grid-template-columns:1fr}
+  .details{flex-direction:column;padding:4px var(--s3)}
+  .vcard{padding:10px 0;gap:0;flex:none;display:grid;grid-template-columns:92px 1fr;align-items:baseline;column-gap:12px}
+  .vcard .label{grid-row:1/span 3;margin:0;font-size:13px}
+  .vcard + .vcard{border-left:0;border-top:1px solid var(--line)}
+  .vcard a{min-height:44px;display:flex;word-break:break-word}
+  .vcard p{font-size:16px}.vcard .small{font-size:13px}
+  #why .lede,#conditions .lede{display:none}
+
+  /* footer and fixed bar */
+  footer{background:var(--navy);color:var(--on-navy);padding-block:var(--s4) calc(var(--s3) + var(--bar-h) + env(safe-area-inset-bottom,0px))}
+  .foot{grid-template-columns:1fr;gap:var(--s2)}
+  .brandcol{flex-direction:row;align-items:center;justify-content:space-between}
+  .brandcol img{width:110px}
+  .sig-n{display:none}.sig-l{display:block}
+  .brandcol .caps{color:var(--gold-light)}
+  .navcol,.contactcol{display:none}
+  .legal{border-top-color:rgba(255,255,255,.14);color:var(--on-navy-dim);margin-top:var(--s2);font-size:13px}
+  .mbar{display:flex;align-items:center;gap:var(--s1);position:fixed;left:0;right:0;bottom:0;z-index:15;height:calc(var(--bar-h) + env(safe-area-inset-bottom,0px));padding:0 var(--gutter) env(safe-area-inset-bottom,0px);background:rgba(247,243,238,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);transition:transform .25s}
+  .mbar .btn{min-height:44px;font-size:14.5px;padding:0 18px}
+  .mbar .btn-dark{flex:1}
+  .mbar.away{transform:translateY(110%)}
+}
+@media (max-width:359px){
+  .brand span{display:none}
+  .vcard{grid-template-columns:1fr}.vcard .label{grid-row:auto}
+  .stats{gap:8px}.stats b{font-size:18px}.hero .label{white-space:normal}
+  .mbar{gap:6px;padding-left:12px;padding-right:12px}.mbar .btn{padding:0 10px;font-size:13px;min-width:0}.mbar .btn-dark{flex:1 1 0}
+  .plaques li{grid-template-columns:90px 1fr}.plaques .logo img{max-width:90px}
+}
+
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Dr. Shar’s Foot &amp; Ankle, home"><img src="img/signature-navy.png" alt="Dr. Shar"><span>FOOT &amp; ANKLE</span></a>
+    <nav class="nav" aria-label="Main"><a href="#membership">Membership</a><a href="#conditions">Conditions</a><a href="#dr-shar">About Dr. Shar</a><a href="#how">How to join</a><a href="#faq">FAQ</a><a class="tel" href="tel:+17137375627">713.737.5627</a></nav>
+    <a class="btn btn-dark hdr-cta" href="#contact">Request an introduction</a>
+    <button class="icon-btn" id="menuOpen" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
+  </div>
+</header>
+<div class="menu" id="menu" hidden>
+  <button class="icon-btn" id="menuClose" type="button" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <nav aria-label="Menu"><a href="#membership">Membership</a><a href="#conditions">Conditions</a><a href="#dr-shar">About Dr. Shar</a><a href="#how">How to join</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+  <a class="btn btn-dark" href="#contact">Request an introduction</a>
+  <div class="menu-contact"><a href="tel:+17137375627">713.737.5627</a><a href="mailto:care@drshardpm.com">care@drshardpm.com</a><span>By referral or inquiry · Limited enrollment</span></div>
+</div>
+
+<main id="top">
+
+<!-- 1. Hero -->
+<section class="split hero" aria-labelledby="hero-title">
+  <div class="panel">
+    <div class="inner">
+      <p class="label rv">Foot &amp; Ankle Surgeon, New York</p>
+      <h1 class="t-display rv" id="hero-title">Dr. Sharaara Rahman</h1>
+      <p class="claim rv">[One line in Dr. Shar’s words]</p>
+      <p class="lede rv">A board-certified foot and ankle surgeon on the faculty at Mount&nbsp;Sinai. She keeps her practice small so every member has her time and a direct way to reach&nbsp;her.</p>
+      <div class="act rv"><a class="btn btn-dark" href="#contact">Request an introduction <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><span class="note">By referral or inquiry · Limited enrollment</span></div>
+      <ul class="stats rv" aria-label="At a glance">
+        <li><b>45–60 min</b><span>Every visit, with Dr. Shar</span></li>
+        <li><b>Same day</b><span>Or next day, when available</span></li>
+        <li><b>90 days</b><span>Of check-ins after surgery</span></li>
+      </ul>
+    </div>
+  </div>
+  <figure class="photo photo-hero"><img fetchpriority="high" srcset="img/gen-consult-sm.jpg 800w, img/gen-consult.jpg 1536w" sizes="(max-width:700px) 100vw, 50vw" src="img/gen-consult.jpg" alt="Dr. Shar explaining a foot model to a patient in her clinic"><span class="chip">AI-generated image · replace before launch</span></figure>
+</section>
+
+<!-- 2. Credentials (interim logos; swap for the approved one-color files) -->
+<section class="creds" aria-labelledby="creds-title">
+  <div class="wrap">
+    <h2 class="label creds-h" id="creds-title">Training and appointments</h2>
+    <ul class="plaques">
+      <li><span class="logo"><img class="lg-ms" src="img/logos-mono/mount-sinai.png" alt="Mount Sinai" loading="lazy"></span><p><b class="sr">Mount Sinai Health System.</b> Clinical Assistant Professor, Orthopedics</p></li>
+      <li><span class="logo"><img class="lg-lh" src="img/logos-mono/lenox-hill.svg" alt="Lenox Hill Hospital, Northwell Health" loading="lazy"></span><p><b class="sr">Lenox Hill Hospital.</b> Chief Resident, Reconstructive Rearfoot and Ankle Surgery</p></li>
+      <li><span class="logo"><img class="lg-ny" src="img/logos-mono/nycpm.png" alt="New York College of Podiatric Medicine, Touro University" loading="lazy"></span><p><b class="sr">New York College of Podiatric Medicine.</b> Doctor of Podiatric Medicine</p></li>
+      <li><span class="logo"><img class="lg-ya" src="img/logos-mono/yale-som.svg" alt="Yale School of Management" loading="lazy"></span><p><b class="sr">Yale School of Management.</b> Healthcare Management</p></li>
+      <li><span class="logo"><img class="lg-ab" src="img/logos-mono/abpm.png" alt="American Board of Podiatric Medicine" loading="lazy"></span><p><b class="sr">American Board of Podiatric Medicine.</b> Board Certified</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 3. Why it's different -->
+<section id="why" class="split" aria-labelledby="why-title">
+  <figure class="photo photo-why"><img loading="lazy" srcset="img/run-group-sm.jpg 800w, img/run-group.jpg 1672w" sizes="(max-width:700px) 100vw, 50vw" src="img/run-group.jpg" alt="A group of runners on a lakeside path"></figure>
+  <div class="panel">
+    <div class="inner">
+      <p class="label rv">Why it’s different</p>
+      <h2 class="t-h rv" id="why-title">Fewer barriers between you and your doctor.</h2>
+      <p class="lede rv">Private medicine isn’t about more appointments. It’s about the doctor you trust being easy to reach.</p>
+      <ul class="pairs rv">
+        <li><small>Instead of calling the office and waiting</small><span>Message Dr. Shar directly, even with a photo</span></li>
+        <li><small>Instead of short, hurried visits</small><span>Visits long enough to ask every question</span></li>
+        <li><small>Instead of starting over with someone new</small><span>A doctor who already knows your history</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Membership -->
+<section id="membership" class="band on-sand" aria-labelledby="mem-title">
+  <div class="wrap">
+    <div class="sh rv">
+      <p class="label">Membership</p>
+      <h2 class="t-h" id="mem-title">Same medicine, more access.</h2>
+      <p class="lede">Two levels, both with Dr. Shar at every visit. Enrollment is limited.</p>
+    </div>
+    <div class="tier-switch rv" role="tablist" aria-label="Membership level"><button type="button" role="tab" aria-selected="true" data-t="private">Private</button><button type="button" role="tab" aria-selected="false" data-t="black">Black</button></div>
+    <div class="tiers rv" id="tiers" data-show="private">
+      <article class="tier">
+        <div class="tier-top"><h3 class="tier-name">PRIVATE</h3><span class="price">$10,000 <small>/ year</small></span></div>
+        <p class="sub">For people who want a surgeon who knows them.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Direct messaging with Dr. Shar</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>45- to 60-minute visits, in the office or by video</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>A yearly Mobility Exam, written plan and one pair of custom orthotics</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Second opinions, and help arranging scans, PT, specialists and surgery</li>
+        </ul>
+      </article>
+      <article class="tier black">
+        <div class="tier-top"><h3 class="tier-name">BLACK</h3><span class="price">$20,000 <small>/ year</small></span></div>
+        <p class="sub">Everything in Private, plus extended access.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>After-hours and weekend access</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>An additional pair of custom orthotics</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Detailed walking and running analysis</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your own concierge, and help arranging care anywhere in the US</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Visits at home, a hotel or your office when medically appropriate</li>
+        </ul>
+      </article>
+    </div>
+    <ul class="both rv" aria-label="Included in both levels">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Same-day or next-day visits</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Text Dr. Shar and know whether to come in, get a scan or go to the ER</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Scans, PT, specialists and surgery arranged for you</li>
+    </ul>
+    <p class="fine rv">Black is reserved for a small number of individuals and families. Family members can join at a lower rate.</p>
+  </div>
+</section>
+
+<!-- 5. Conditions -->
+<section id="conditions" class="split rev" aria-labelledby="cond-title">
+  <figure class="photo photo-cond"><img loading="lazy" srcset="img/gen-surgery-team-sm.jpg 800w, img/gen-surgery-team.jpg 1122w" sizes="(max-width:700px) 100vw, 50vw" src="img/gen-surgery-team.jpg" alt="Dr. Shar operating with a colleague"><span class="chip">AI-generated image · replace before launch</span></figure>
+  <div class="panel on-paper">
+    <div class="inner">
+      <p class="label rv">Conditions</p>
+      <h2 class="t-h rv" id="cond-title">Start with what’s bothering you.</h2>
+      <p class="lede rv">From a first visit for heel pain to complex reconstructive surgery.</p>
+      <ul class="condlist rv">
+        <li><a href="#contact">Heel and arch pain<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li><li><a href="#contact">Ankle sprains and instability<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li><li><a href="#contact">Bunions and hammertoes<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li><li><a href="#contact">Sports injuries<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li><li><a href="#contact">Arthritis<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li><li><a href="#contact">Nerve and skin concerns<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 6. About -->
+<section id="dr-shar" class="split" aria-labelledby="about-title">
+  <figure class="photo photo-about"><img loading="lazy" srcset="img/gen-exam-sm.jpg 800w, img/gen-exam.jpg 1536w" sizes="(max-width:700px) 100vw, 50vw" src="img/gen-exam.jpg" alt="Dr. Shar examining a patient’s ankle"><span class="chip">AI-generated image · replace before launch</span></figure>
+  <div class="panel on-sand">
+    <div class="inner">
+      <p class="label rv">About Dr. Shar</p>
+      <h2 class="t-h rv" id="about-title">Meet Dr. Shar.</h2>
+      <p class="lede rv">Dr. Shar keeps active people at their best: preventive care, mobility, sports performance, aesthetic foot care and, when it’s needed, expert surgery. All with unhurried time and a lasting relationship.</p>
+      <p class="small muted rv">DPM, MS, FACPM, DABPM · Founder and foot and ankle surgeon</p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. How to join -->
+<section id="how" class="split rev" aria-labelledby="how-title">
+  <figure class="photo photo-how"><img loading="lazy" srcset="img/gen-paris-sm.jpg 800w, img/gen-paris.jpg 1536w" sizes="(max-width:700px) 100vw, 50vw" src="img/gen-paris.jpg" alt="Dr. Shar at a sidewalk cafe"><span class="chip">AI-generated image · replace before launch</span></figure>
+  <div class="panel on-navy">
+    <div class="inner">
+      <p class="label rv">How to join</p>
+      <h2 class="t-h rv" id="how-title">How to become a member.</h2>
+      <ol class="steps rv">
+        <li><span class="n">I</span><div><b>Get in touch</b><p>Call or email us, or ask your doctor or financial advisor to introduce you.</p></div></li>
+        <li><span class="n">II</span><div><b>Meet Dr. Shar</b><p>A consultation to talk through what you need and make sure membership is a good fit.</p></div></li>
+        <li><span class="n">III</span><div><b>Get started</b><p>Sign your yearly agreement and book your first Mobility Exam.</p></div></li>
+      </ol>
+      <a class="link rv" href="#contact">Request an introduction <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- 8. FAQ -->
+<section id="faq" class="band" aria-labelledby="faq-title">
+  <div class="wrap faq">
+    <div class="sh rv">
+      <p class="label">FAQ</p>
+      <h2 class="t-h" id="faq-title">Questions people ask first.</h2>
+      <p class="lede">If yours isn’t here, call or email and we’ll answer it.</p>
+    </div>
+    <div class="qa rv">
+      <details><summary>Is membership health insurance?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>No. Membership does not replace your health insurance. Your plan is still used for scans, tests and referrals to other specialists. Surgery, therapy, additional orthotics and outside care are billed separately or through insurance.</p></details>
+      <details><summary>Do I need a referral?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>No. Membership is by referral or inquiry. You can call or email us yourself, or ask your doctor or financial advisor to introduce you.</p></details>
+      <details><summary>How quickly can I be seen?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Members get same-day or next-day visits when available, and can message Dr. Shar directly. Black members also have after-hours and weekend access.</p></details>
+      <details><summary>Does Dr. Shar perform surgery?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Yes. She is a foot and ankle surgeon. When surgery is the right answer, members have the same surgeon from the first exam through recovery, with 90 days of check-ins afterward.</p></details>
+      <details><summary>What is the Mobility Exam?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>A yearly check of how you walk, your strength, balance and shoes, with a written plan and custom-made orthotics tailored to how you move.</p></details>
+      <details><summary>Can my family join?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Yes. Family members can join at a lower rate.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Contact -->
+<section id="contact" class="band on-sand" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="sh rv">
+      <p class="label">Contact</p>
+      <h2 class="t-h" id="contact-title">Request an introduction.</h2>
+      <p class="lede">Tell us a little about what’s going on and we’ll set up a short call with Dr. Shar. We reply within one business day.</p>
+    </div>
+    <div class="contact rv">
+      <!-- Demo form: shows a confirmation on submit. Connect to the practice inbox or scheduling tool at launch. -->
+      <form class="form card" id="introForm" novalidate>
+        <div class="f2">
+          <label>Name<input type="text" name="name" autocomplete="name" required></label>
+          <label>Phone or email<input type="text" name="contact" autocomplete="tel" inputmode="email" required></label>
+        </div>
+        <label>What’s going on?<textarea name="note" rows="4" placeholder="A few words is plenty."></textarea></label>
+        <label>How did you hear about Dr. Shar?<select name="source"><option value="">Choose one</option><option>My doctor</option><option>A friend or family member</option><option>My financial advisor</option><option>Search</option><option>Other</option></select></label>
+        <div class="f-act"><button class="btn btn-dark" type="submit">Send <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><span class="small muted">Or call <a href="tel:+17137375627">713.737.5627</a></span></div>
+        <p class="f-done t-sub" id="formDone" hidden>Thank you. We’ll be in touch within one business day.</p>
+      </form>
+      <div class="details card">
+        <div class="vcard"><h3 class="label">Call or email</h3><a href="tel:+17137375627">713.737.5627</a><a href="mailto:care@drshardpm.com">care@drshardpm.com</a></div>
+        <div class="vcard"><h3 class="label">Office</h3><p>[Street address]</p><p>[City, State ZIP]</p></div>
+        <div class="vcard"><h3 class="label">Hours</h3><p>[Office hours]</p><p class="small muted">Members can message Dr. Shar any time.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="brandcol"><img class="sig-n" src="img/signature-navy.png" alt="Dr. Shar"><img class="sig-l" src="img/signature-linen.png" alt=""><span class="caps">FOOT &amp; ANKLE</span></div>
+      <div class="navcol"><h4 class="label">Membership</h4><a href="#membership">Private</a><a href="#membership">Black</a></div>
+      <div class="navcol"><h4 class="label">Conditions</h4><a href="#conditions">Heel and arch pain</a><a href="#conditions">Ankle sprains</a><a href="#conditions">Bunions</a><a href="#conditions">Sports injuries</a></div>
+      <div class="navcol"><h4 class="label">Practice</h4><a href="#dr-shar">About Dr. Shar</a><a href="#how">How to join</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+      <div class="contactcol"><h4 class="label">Contact</h4><a href="tel:+17137375627">713.737.5627</a><a href="mailto:care@drshardpm.com">care@drshardpm.com</a></div>
+    </div>
+    <div class="legal">
+      <p>Membership is not health insurance. Surgery, scans, tests, therapy, additional orthotics and outside care are billed separately or through insurance. Services are provided by Sharaara Rahman Podiatry P.C. In an emergency, call 911 or go to the nearest ER.</p>
+      <p>© 2026 Dr. Shar’s Foot &amp; Ankle. Demo imagery: AI-generated scenes and stock; replace before launch.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar"><a class="btn btn-dark" href="#contact">Request an introduction</a><a class="btn btn-line" href="tel:+17137375627" aria-label="Call 713.737.5627"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Call</a></div>
+
+<script>
+(function(){
+  var m=document.getElementById('menu'),o=document.getElementById('menuOpen'),c=document.getElementById('menuClose'),bar=document.getElementById('mbar');
+  function setMenu(open){m.hidden=!open;o.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':'';bar.classList.toggle('away',open||bar.dataset.contact==='1');if(open)c.focus();else o.focus();}
+  o.addEventListener('click',function(){setMenu(true)});c.addEventListener('click',function(){setMenu(false)});
+  m.addEventListener('click',function(e){if(e.target.tagName==='A')setMenu(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden)setMenu(false)});
+  var tiers=document.getElementById('tiers');
+  document.querySelectorAll('.tier-switch button').forEach(function(b){b.addEventListener('click',function(){tiers.dataset.show=b.dataset.t;document.querySelectorAll('.tier-switch button').forEach(function(x){x.setAttribute('aria-selected',x===b)})})});
+  var f=document.getElementById('introForm');
+  f.addEventListener('submit',function(e){e.preventDefault();var ok=true;f.querySelectorAll('[required]').forEach(function(i){var bad=!i.value.trim();i.classList.toggle('bad',bad);if(bad)ok=false});if(!ok)return;f.querySelectorAll('.f2,label,.f-act').forEach(function(x){x.hidden=true});document.getElementById('formDone').hidden=false});
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){bar.dataset.contact=e[0].isIntersecting?'1':'0';bar.classList.toggle('away',e[0].isIntersecting||!m.hidden)},{threshold:.2}).observe(document.getElementById('contact'));
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  }else{document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')})}
+})();
+</script>
+
+</body>
+</html>
